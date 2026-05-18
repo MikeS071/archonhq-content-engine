@@ -59,9 +59,26 @@ Automated content pipeline: **idea → draft → QA → publish → distribute**
    nano .env
    ```
 
-3. **Run the installer**
+3. **Run onboarding + installer**
    ```bash
    ./setup.sh
+   ```
+
+   On first run, the installer asks qualifying questions about your brand, audience, voice, themes, content boundaries, article structure, primary series, and distribution rules. It writes local files that are ignored by git:
+
+   - `config.yaml`
+   - `content_profile.md`
+   - `series_themes/<your-series>.json`
+   - empty runtime state files
+
+   To run onboarding directly:
+   ```bash
+   python3 scripts/onboard.py
+   ```
+
+   Onboarding is **once per install**. If `config.yaml` and `content_profile.md` already exist, questions are skipped. To intentionally replace brand voice/themes:
+   ```bash
+   python3 scripts/onboard.py --force
    ```
 
 4. **Verify connectivity**

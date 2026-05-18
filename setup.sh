@@ -52,6 +52,21 @@ mkdir -p "$ROOT_DIR/series_themes"
 mkdir -p "$ROOT_DIR/growth_reports"
 ok "Directories created: qa_reports/, metrics/, social/, images/, series_themes/, growth_reports/"
 
+# ── 2b. Brand/content onboarding ───────────────────────────────────────────
+
+if [ ! -f "$ROOT_DIR/config.yaml" ] || [ ! -f "$ROOT_DIR/content_profile.md" ]; then
+    if [ -t 0 ]; then
+        info "Running brand/content onboarding..."
+        python3 "$SCRIPTS_DIR/onboard.py"
+        ok "Onboarding complete: config.yaml, content_profile.md, and series theme created"
+    else
+        warn "Skipping interactive onboarding because stdin is not a terminal."
+        warn "Run later: python3 scripts/onboard.py"
+    fi
+else
+    ok "Content profile already exists"
+fi
+
 # ── 3. Configure .env ──────────────────────────────────────────────────────
 
 info "Configuring environment..."
