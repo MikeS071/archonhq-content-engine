@@ -1,0 +1,39 @@
+{
+  "series": "example",
+  "series_code": "E",
+  "name": "Example Series",
+  "description": "Reusable example series definition.",
+  "status": "active",
+  "directory": "example-series",
+  "next_number": 1,
+  "core_themes": [
+    "theme one",
+    "theme two"
+  ],
+  "voice": {
+    "tone": "practical",
+    "style": "specific and direct"
+  },
+  "fit_criteria": {
+    "must_have": [
+      "concrete reader outcome",
+      "specific implementation angle"
+    ],
+    "nice_to_have": [
+      "downloadable artifact",
+      "measurable workflow improvement"
+    ],
+    "disqualify": [
+      "pure news commentary",
+      "private client material"
+    ]
+  },
+  "article_structure": [
+    "Hook",
+    "The Idea",
+    "Why This Matters",
+    "Walkthrough",
+    "Caveats",
+    "CTA"
+  ]
+}

@@ -1,0 +1,42 @@
+# Content Engine Configuration Example
+# Copy to config.yaml and edit for your publication.
+
+publication:
+  name: "Your Publication"
+  site_url: "https://example.com"
+  articles_dir: "/absolute/path/to/your/articles"
+  hero_images_dir: "/absolute/path/to/your/articles/hero-images"
+
+models:
+  idea: "deepseek/deepseek-chat-v3-0324"
+  draft: "z-ai/glm-5.1"
+  qa: "z-ai/glm-5.1"
+  distribution: "deepseek/deepseek-chat-v3-0324"
+  prose_fix: "z-ai/glm-5.1"
+  growth: "z-ai/glm-5.1"
+  hero_image: "gpt-image-2"
+
+paths:
+  ideas_queue: "ideas_queue.json"
+  idea_catalogue: "idea_catalogue.json"
+  pipeline_state: "pipeline_state.json"
+  qa_reports: "qa_reports"
+  metrics: "metrics"
+  social: "social"
+  images: "images"
+
+qa:
+  min_word_count: 800
+  llm_min_score: 7
+  required_sections:
+    - hook
+    - idea
+    - why
+    - walkthrough
+    - caveat
+
+publishing:
+  manual_substack: true
+  devto_enabled: false
+  x_enabled: false
+  reddit_auto_post: false
